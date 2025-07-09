@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="modal" style="display: block; background-color: transparent; position: relative;">
+  <div class="modal-content">
+    <h2>Register</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+  </div>
+</div>
+{% endblock %}

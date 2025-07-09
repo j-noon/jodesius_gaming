@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from learning import views as index_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-        path('home/', include('home.urls')),    # Routes to home app
+    path('accounts/', include('core.urls')),
+    path('home/', include('home.urls')),    # Routes to  app
     path('learning/', include('learning.urls')),  # Routes to learning app
     path('gallery/', include('gallery.urls')),    # Routes to gallery app
     path('admin/', admin.site.urls),
