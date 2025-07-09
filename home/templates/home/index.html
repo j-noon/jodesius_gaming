@@ -1,0 +1,52 @@
+<!-- home/templates/home/index.html -->
+ {% load static %}
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <!-- Hero Image -->
+    <div id="hero-image">
+        <img src="{% static 'assets/images/just-chatting.webp' %}" alt="image of a fire place in a medieval castle" />
+    </div>
+
+    <!-- About Me -->
+    <div id="about-me">
+        <button id="abt-me-h2">About me</button>
+        <p class="abt-me-p-hide">
+            Professional button-masher, amateur voice actor, and part-time hacker...
+        </p>
+    </div>
+
+    <!-- Trailer -->
+    <div id="trailer-container">
+        <h2>Trailer</h2>
+        <video controls autoplay muted loop src="{% static 'assets/media/twitch-trailer.webm' %}">
+            <p>Please refresh page or update your browser</p>
+        </video>
+    </div>
+
+    <!-- Comments Section -->
+    <div id="comments-container">
+        <h2 id="coments-title"> Comments and Suggestions </h2>
+
+        {% if user.is_authenticated %}
+        <!-- Form inside modal trigger -->
+        <button id="openModalBtn">Leave a Comment</button>
+
+        <div id="commentModal" class="modal" style="display:none;">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        {% else %}
+        <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
+        {% endif %}
+
+        <ul>
+            {% for comment in comments %}
+                <li><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

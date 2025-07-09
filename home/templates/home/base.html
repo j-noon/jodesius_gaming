@@ -1,0 +1,54 @@
+<!-- home/templates/home/base.html -->
+ 
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="jodesius gamings streamer and personal advertisement web application." />
+    <title>JodesiusGaming</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="180x180" href="{% static 'assets/favicons/medievil-castle-web180x180.webp' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/styles.css' %}">
+    <script src="https://kit.fontawesome.com/8f2281581f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1 id="tittle">Jodesius Gaming</h1>
+        <a id="logo-link" href="{% url 'home' %}">
+            <img id="logo-home" src="{% static 'assets/images/jodesius-profile-web.webp' %}" alt="jodesius gamings logo" />
+        </a>
+        <nav id="nav-section">
+            <ul id="nav-list">
+                <a href="{% url 'gallery' %}"><li class="nav-btn">Gallery</li></a>
+                <a href="{% url 'learning' %}"><li class="nav-btn">Learning</li></a>
+                <a href="{% url 'lets_play' %}"><li class="nav-btn">Let's Play</li></a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content block -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://www.facebook.com/jodesius/" target="_blank" class="icons" rel="noopener">
+            <img src="{% static 'assets/images/facebook-logo-75x75.png' %}" />
+        </a>
+        <a href="https://discord.com/" target="_blank" class="icons" rel="noopener">
+            <img src="{% static 'assets/images/discord-logo-75x75.png' %}" />
+        </a>
+        <a href="https://www.twitch.tv/jodesiusgamingrelaunched" target="_blank" class="icons" rel="noopener">
+            <img src="{% static 'assets/images/twitch-logo-75x75.png' %}" />
+        </a>
+    </footer>
+
+    <script src="{% static 'assets/scripts/script.js' %}"></script>
+    <script src="{% static 'home/js/script.js' %}"></script>
+</body>
+</html>
