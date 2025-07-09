@@ -19,6 +19,7 @@ from django.urls import path, include
 from learning import views as index_views
 
 urlpatterns = [
-    path('', index_views.index, name='index'),
+    path('learning/', include('learning.urls')),  # Routes to learning app
+    path('gallery/', include('gallery.urls')),    # Routes to gallery app
     path('admin/', admin.site.urls),
 ]
