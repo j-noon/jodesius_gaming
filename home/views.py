@@ -21,6 +21,7 @@ def home(request):
         form = CommentForm()
     return render(request, 'home/index.html', {'comments': comments, 'form': form})
 
+
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id, user=request.user)
