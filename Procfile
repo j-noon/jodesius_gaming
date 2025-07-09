@@ -1,0 +1,1 @@
+web: gunicorn jodesius_gaming.wsgi
