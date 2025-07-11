@@ -1,0 +1,316 @@
+<!-- learning/templates/learning/learning.html -->
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Learning Hub{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'learning/css/learning.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Your existing learning page content here -->
+ <!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="jodesius gamings streamer and perosnal advertisement web application."
+    />
+    <meta
+      name="description"
+      content="jodesiusgaming, streamer, content creator, Twitch, Adventure, Surivival, I.t learning"
+    />
+    <meta author="jodesius-developement" />
+
+    <!--tittle of page-->
+    <title>JodesiusGaming</title>
+
+    <!--fav icon-->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="180x180"
+      href="assets/favicons/medievil-castle-web180x180.webp"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicons/medievil-castle-web16x16.webp"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicons/medievil-castle-web32x32.webp"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+   
+    <section id="nmap-section">
+      <h2 class="headings">N-Map</h2>
+
+      <h3 class="subheadings">What is Nmap</h3>
+      <p class="paragraphs">
+        Nmap, short for Network Mapper, is a free and open-source tool used for
+        network discovery and security auditing. It's primarily used to identify
+        hosts and services on a network by sending packets and analyzing
+        responses. Administrators and security professionals use it for tasks
+        like network inventory, service monitoring, and penetration testing.
+      </p>
+
+      <h3 class="subheadings">Example</h3>
+      <p id="nmap-example" class="paragraphs">nmap -p- -sV -T5 Target IP Address</p>
+
+      <h3 class="subheadings">Switches</h3>
+      <p class="paragraphs">
+        A switch (also called a flag or option) in command-line tools like nmap
+        is a special keyword that changes how a command behaves. It usually
+        starts with a dash (- or --) and tells the tool what to do — like what
+        to scan, how to scan, what ports to check, or how to show results.
+      </p>
+
+      <h3 class="subheadings">Common Switches</h3>
+
+      <ol id="nmap-switches">
+        <li>-p- : Scans all ports</li>
+        <li>-sV : Scans for versions running on network</li>
+        <li>T5 : Scans fast hard and loud. (T1 is silent and slow).</li>
+        <li>sS : Stealth (SYN) scan</li>
+        <li>
+          -O : Scans for the operating systems that are running on the network
+        </li>
+        <li>
+          -P : Scans for a range of ports when given the range. (-p 1-100)
+        </li>
+        <li>oA : Save scan results (All formats)</li>
+      </ol>
+
+
+      <img id="nmap-terminal-image" src="assets/images/nmap-terminal.webp" alt="image of nmap being executed in terminal">
+
+      <button id="nmap-button">Nmap Example</button>
+
+      <p id="click-above">click above to see a real world example</p>
+
+      <!-- nmap modal html and css-->
+      <div
+        id="nmap-modal"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 9999;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            position: relative;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #f229de;
+            width: 90%;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+          "
+        >
+          <span
+            onclick="closeModal()"
+            style="
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              color: #f229de;
+              font-weight: bold;
+              font-size: 20px;
+              cursor: pointer;
+            "
+            >&times;</span
+          >
+          <pre
+            id="terminal-output"
+            style="
+              color: #00ff00;
+              font-family: 'Courier New', Courier, monospace;
+              white-space: pre-wrap;
+            "
+          >
+<b>nmap -sS -p- -sV -O 182.234.10.01</b>
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2025-06-23 20:22 UTC
+Nmap scan report for 182.234.10.01
+Host is up (0.042s latency).
+Not shown: 65529 closed ports
+PORT      STATE SERVICE     VERSION
+22/tcp    open  ssh         OpenSSH 8.4p1 Debian (protocol 2.0)
+80/tcp    open  http        Apache httpd 2.4.52 ((Unix))
+139/tcp   open  netbios-ssn Samba smbd 4.13.13-Debian
+445/tcp   open  microsoft-ds Samba smbd 4.13.13-Debian
+3306/tcp  open  mysql       MySQL 5.7.31
+MAC Address: 00:0C:29:68:22:7A (VMware)
+
+OS detection performed. Guess: Linux 4.15 - 5.8
+OS CPE: cpe:/o:linux:linux_kernel:4
+Aggressive OS guesses: Linux 5.4 (95%), Linux 4.19 (92%)
+
+Nmap done: 1 IP address (1 host up) scanned in 18.56 seconds
+    </pre>
+          <button
+            id="nmap-close-button"
+            style="
+              background-color: #f229de;
+              color: white;
+              border: 2px solid black;
+              padding: 10px;
+              margin-top: 10px;
+              border-radius: 8px;
+            "
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+
+    <section id="brute-force-section">
+      <h2 class="headings">Brute Force Attacks</h2>
+
+      <h3 class="subheadings">What is a Brute Force Attack?</h3>
+      <p class="paragraphs">
+        A brute force attack is a method used to gain unauthorized access to
+        accounts or systems by trying every possible password or key combination
+        until the correct one is found. It's often used against login pages,
+        encrypted files, or password hashes. While simple, brute force attacks
+        can be effective, especially when passwords are weak.
+      </p>
+
+      <h3 class="subheadings">How is it used?</h3>
+      <p class="paragraphs">
+        Brute force attacks are usually automated using tools like Hydra,
+        Medusa, or Crunch. These tools can generate and test thousands of
+        password combinations quickly. A common approach is to generate a
+        wordlist using Crunch and feed it into a login attack tool.
+      </p>
+
+      <h3 class="subheadings">Example (Crunch + Hydra)</h3>
+      <p class="paragraphs">
+        crunch 4 4 abcdef123 -o wordlist.txt hydra -l admin -P wordlist.txt
+        192.168.1.10 http-post-form "/login.php:user=^USER^&pass=^PASS^
+        :F=incorrect"
+      </p>
+
+      <button id="brute-button">Brute Force Example</button>
+      <p id="click-above">Click above to see a simulated attack output</p>
+
+      <!-- Modal -->
+      <div
+        id="brute-modal"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 9999;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            position: relative;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #f229de;
+            width: 90%;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+          "
+        >
+          <span
+            onclick="document.getElementById('brute-modal').style.display='none'"
+            style="
+              position: absolute;
+              top: 10px;
+              right: 15px;
+              color: #f229de;
+              font-weight: bold;
+              font-size: 20px;
+              cursor: pointer;
+            "
+            >&times;</span
+          >
+          <pre
+            id="brute-output"
+            style="
+              color: #00ff00;
+              font-family: 'Courier New', Courier, monospace;
+              white-space: pre-wrap;
+            "
+          >
+<b>hydra -l admin -P wordlist.txt 192.168.1.10 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"</b>
+
+Hydra v9.5 (c) 2025 by van Hauser/THC & others
+[DATA] Target: 192.234.1.10 - Protocol: http-post-form
+[DATA] Login: admin
+[DATA] Wordlist: wordlist.txt
+[DATA] Error message: incorrect
+
+[80][http-post-form] host: 192.234.1.10   login: admin   password: 1234
+[STATUS] Attack finished in 6.02 seconds. 1 valid password found.
+      </pre>
+          <button
+            onclick="document.getElementById('brute-modal').style.display='none'"
+            style="
+              background-color: #f229de;
+              color: white;
+              border: 2px solid black;
+              padding: 10px;
+              margin-top: 10px;
+              border-radius: 8px;
+            "
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+
+  <script src="assets/scripts/nmap-modal.js"></script>
+  <script src="assets/scripts/brute-modal.js"></script>
+</html>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Any learning-specific JavaScript can go here -->
+{% endblock %}
