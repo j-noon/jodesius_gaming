@@ -36,25 +36,34 @@
     </div>
 {% endif %}
 
-    <!-- Comments Section -->
-   <div id="comments-container">
-    <h2 id="coments-title"> Comments and Suggestions </h2>
+<!-- Comments Section -->
+<div id="comments-container">
+  <h2 id="coments-title"> Comments and Suggestions </h2>
 
-    {% if user.is_authenticated %}
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button id="comment-btn" type="submit">Leave a Comment</button>
-        </form>
-    {% else %}
-        <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
-    {% endif %}
+  {% if messages %}
+    {% for message in messages %}
+      <div id="comment-message">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
 
-    <ul>
-        {% for comment in comments %}
-            <li><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</li>
-        {% endfor %}
-    </ul>
+  {% if user.is_authenticated %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button id="comment-btn" type="submit">Leave a Comment</button>
+    </form>
+  {% else %}
+    <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
+  {% endif %}
+
+  <div id="comment-feed">
+    {% for comment in comments %}
+      <div class="single-comment">
+        <strong>{{ comment.user.username }} commented:</strong>
+        <p>{{ comment.content }}</p>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
 

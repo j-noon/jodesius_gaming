@@ -160,3 +160,25 @@
   border-radius: 8px;
   text-align: center;
 }
+
+#comment-feed {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 2px solid black;
+}
+
+.single-comment {
+  background-color: #fff0fa;
+  border: 2px solid #f229de;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: black;
+}
+
+.single-comment strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #f229de;
+}
