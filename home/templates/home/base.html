@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
-    <script src="https://kit.fontawesome.com/8f2281581f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'core/css/core.css' %}">
 
         <!-- Extra CSS from child templates -->
     {% block extra_css %}{% endblock %}
@@ -29,8 +29,19 @@
         </a>
 <nav id="nav-section">
     <ul id="nav-list">
-        <a href="{% url 'gallery' %}"><li class="nav-btn">Gallery</li></a>
-        <a href="{% url 'learning' %}"><li class="nav-btn">Learning</li></a>
+        <!-- Modified Gallery Button -->
+        <a href="{% if user.is_authenticated %}{% url 'gallery' %}{% else %}#{% endif %}" 
+           class="nav-btn protected-link" 
+           id="gallery-link">
+           <li>Gallery</li>
+        </a>
+
+        <!-- Modified Learning Button -->
+        <a href="{% if user.is_authenticated %}{% url 'learning' %}{% else %}#{% endif %}" 
+           class="nav-btn protected-link" 
+           id="learning-link">
+           <li>Learning</li>
+        </a>
 
         {% if user.is_authenticated %}
             <a href="{% url 'logout' %}"><li class="nav-btn">Logout</li></a>
@@ -58,7 +69,22 @@
         </a>
     </footer>
 
+    <!-- Auth Modal -->
+<div id="auth-modal" class="auth-modal">
+    <div class="modal-content">
+        <h2>🔒 Nice try! 😎</h2>
+        <p>You need to be logged in to access this content!</p>
+        <div class="modal-buttons">
+            <a href="{% url 'register' %}" class="modal-btn register-btn">Register</a>
+            <a href="{% url 'login' %}" class="modal-btn login-btn">Login</a>
+        </div>
+    </div>
+</div>
+<div id="modal-overlay" class="modal-overlay"></div>
+
+{% block extra_js %}
     <script src="{% static 'home/js/script.js' %}"></script>
-    {% block extra_js %}{% endblock %}
+    <script src="{% static 'core/js/auth_modal.js' %}"></script>
+{% endblock %}
 </body>
 </html>

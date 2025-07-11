@@ -1,0 +1,37 @@
+<div class="unauthorized-modal" style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f229de;
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid black;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 9999;
+    text-align: center;
+    max-width: 80%;
+">
+    <h2 style="color: white; margin-top: 0;">Nice try! 😎</h2>
+    <p style="font-size: 1.2em; margin-bottom: 25px;">
+        Just register to enter this site.<br>
+        Why not? It's free!!!
+    </p>
+    <div>
+        <a href="{% url 'register' %}" style="
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+        ">Register</a>
+        <a href="{% url 'login' %}" style="
+            background: white;
+            color: #f229de;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        ">Login</a>
+    </div>
+</div>

@@ -13,4 +13,21 @@
     <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
   </div>
 </div>
+
+<!-- ▼▼▼ REMOVED THE IF CONDITION - NOW ALWAYS PRESENT ▼▼▼ -->
+<div id="unauthorized-modal" class="unauthorized-modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Nice try! 😎</h2>
+        <p>
+            You need to be logged in to access that page.<br>
+            Why not register? It's free!!!
+        </p>
+        <div class="modal-buttons">
+            <a href="{% url 'register' %}" class="modal-btn-register">Register</a>
+            <a href="{% url 'login' %}" class="modal-btn-login">Login</a>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay" style="display: none;"></div>
+
 {% endblock %}

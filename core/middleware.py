@@ -9,23 +9,17 @@ class LoginRequiredMiddleware:
         response = self.get_response(request)
         return response
 
-    
     def process_view(self, request, view_func, view_args, view_kwargs):
-        # URLs that DO NOT require login
         exempt_urls = [
-            reverse('login'),       # Login page
-            reverse('register'),      # Signup page
-            '/admin/',              # Django admin (optional)
-            '/static/',             # Static files (CSS/JS)
-            '/media/',              # Uploaded media files
+            reverse('login'),
+            reverse('register'),
+            '/admin/',
+            '/static/',
+            '/media/',
         ]
-
-        # Check if current URL is exempt
-        if any(request.path.startswith(url) for url in exempt_urls):
-            return None  # Allow access
-
-        # Redirect to login if not authenticated
-        if not request.user.is_authenticated:
-            return redirect('login')  # Change 'login' to your login URL name
-
-        return None  # Proceed for authenticated users
+        
+        if not request.user.is_authenticated and not any(
+            request.path.startswith(url) for url in exempt_urls
+        ):
+            return redirect(reverse('login'))
+        return None

@@ -1,0 +1,111 @@
+.unauthorized-modal h2 {
+    color: white;
+    margin-top: 0;
+}
+
+/* Auth Modal Styles */
+.auth-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f229de;
+    padding: 2rem;
+    border: 3px solid black;
+    border-radius: 10px;
+    z-index: 1002;
+    max-width: 80%;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1001;
+    display: none;
+}
+
+.modal-content h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid black;
+}
+
+.register-btn {
+    background: black;
+    color: white;
+}
+
+.login-btn {
+    background: white;
+    color: #f229de;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Login Form Container */
+.modal {
+    position: relative;
+    z-index: 100; /* Must be LOWER than modal-overlay (1001) and auth-modal (1002) */
+    background-color: transparent;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Login Form Content */
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* When modal is active */
+.show-modal .modal-content {
+    filter: blur(2px);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+/* Ensure form elements are visible */
+.modal-content form,
+.modal-content h2,
+.modal-content p {
+    position: relative;
+    z-index: 101; /* Slightly higher than modal container */
+}

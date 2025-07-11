@@ -13,4 +13,8 @@
     <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
   </div>
 </div>
+
+{% block extra_js %}
+<script src="{% static 'core/js/register_modal.js' %}"></script>
+{% endblock %}
 {% endblock %}
