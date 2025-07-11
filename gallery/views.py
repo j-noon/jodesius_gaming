@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def gallery(request):
-    return HttpResponse("this is our gallery page")
+    return render(request, 'gallery/gallery.html')
