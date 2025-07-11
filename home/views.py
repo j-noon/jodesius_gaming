@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages  # ← Add this
+from django.contrib import messages
+from django.http import HttpResponseForbidden
 from .models import Comment
 from .forms import CommentForm
-
 
 @login_required
 def home(request):
@@ -14,7 +14,7 @@ def home(request):
             comment = form.save(commit=False)
             comment.user = request.user
             comment.save()
-            messages.success(request, f"Thank you for your comment, {request.user.username}!")  # ← Add this
+            messages.success(request, f"Thank you for your comment, {request.user.username}!")
             return redirect('home')
     else:
         form = CommentForm()
@@ -23,6 +23,9 @@ def home(request):
 
 @login_required
 def delete_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id, user=request.user)
-    comment.delete()
+    comment = get_object_or_404(Comment, id=comment_id)
+    if comment.user == request.user:
+        comment.delete()
+    else:
+        return HttpResponseForbidden("You are not allowed to delete this comment.")
     return redirect('home')

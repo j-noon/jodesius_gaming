@@ -1,5 +1,4 @@
 <!-- home/templates/home/index.html -->
- 
 {% extends 'home/base.html' %}
 {% load static %}
 {% block extra_css %}
@@ -34,39 +33,32 @@
             <p>{{ message }}</p>
         {% endfor %}
     </div>
-{% endif %}
+    {% endif %}
 
-<!-- Comments Section -->
+<!-- Comments Section styled as chat -->
 <div id="comments-container">
-  <h2 id="coments-title"> Comments and Suggestions </h2>
+  <h2 id="coments-title">Comments and Suggestions</h2>
 
-  {% if messages %}
-    {% for message in messages %}
-      <div id="comment-message">{{ message }}</div>
-    {% endfor %}
-  {% endif %}
-
-  {% if user.is_authenticated %}
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button id="comment-btn" type="submit">Leave a Comment</button>
-    </form>
-  {% else %}
-    <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
-  {% endif %}
 
   <div id="comment-feed">
     {% for comment in comments %}
       <div class="single-comment">
-        <strong>{{ comment.user.username }} commented:</strong>
-        <p>{{ comment.content }}</p>
+        <strong>{{ comment.user.username }}:</strong> {{ comment.text }}
       </div>
     {% endfor %}
   </div>
+
+  {% if user.is_authenticated %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.text }}
+      <button id="comment-btn" type="submit">Send</button>
+    </form>
+  {% else %}
+    <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
+  {% endif %}
 </div>
 {% endblock %}
-
 
 {% block extra_js %}
 <script>
