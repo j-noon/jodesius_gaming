@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages  # ← Add this
 from .models import Comment
 from .forms import CommentForm
-
-
-# Create your views here.
 
 
 @login_required
@@ -16,6 +14,7 @@ def home(request):
             comment = form.save(commit=False)
             comment.user = request.user
             comment.save()
+            messages.success(request, f"Thank you for your comment, {request.user.username}!")  # ← Add this
             return redirect('home')
     else:
         form = CommentForm()

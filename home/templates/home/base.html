@@ -12,9 +12,12 @@
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="180x180" href="{% static 'assets/favicons/medievil-castle-web180x180.webp' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
     <script src="https://kit.fontawesome.com/8f2281581f.js" crossorigin="anonymous"></script>
+
+        <!-- Extra CSS from child templates -->
+    {% block extra_css %}{% endblock %}
 </head>
 
 <body>
@@ -55,7 +58,7 @@
         </a>
     </footer>
 
-    <script src="{% static 'assets/scripts/script.js' %}"></script>
     <script src="{% static 'home/js/script.js' %}"></script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

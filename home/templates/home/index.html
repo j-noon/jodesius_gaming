@@ -28,29 +28,49 @@
         </video>
     </div>
 
-    <!-- Comments Section -->
-    <div id="comments-container">
-        <h2 id="coments-title"> Comments and Suggestions </h2>
-
-        {% if user.is_authenticated %}
-        <!-- Form inside modal trigger -->
-        <button id="openModalBtn">Leave a Comment</button>
-
-        <div id="commentModal" class="modal" style="display:none;">
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Post</button>
-            </form>
-        </div>
-        {% else %}
-        <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
-        {% endif %}
-
-        <ul>
-            {% for comment in comments %}
-                <li><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</li>
-            {% endfor %}
-        </ul>
+    {% if messages %}
+    <div id="comment-message">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
     </div>
+{% endif %}
+
+    <!-- Comments Section -->
+   <div id="comments-container">
+    <h2 id="coments-title"> Comments and Suggestions </h2>
+
+    {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="comment-btn" type="submit">Leave a Comment</button>
+        </form>
+    {% else %}
+        <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
+    {% endif %}
+
+    <ul>
+        {% for comment in comments %}
+            <li><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+  setTimeout(() => {
+    const messageBox = document.getElementById('comment-message');
+    if (messageBox) {
+      messageBox.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+      messageBox.style.transform = 'translateX(-100%)';
+      messageBox.style.opacity = '0';
+      setTimeout(() => {
+        messageBox.remove();  // Remove it from the DOM
+      }, 1000);
+    }
+  }, 10000);  // 10 seconds
+</script>
 {% endblock %}
