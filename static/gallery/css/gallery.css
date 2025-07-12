@@ -20,3 +20,21 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+/*extra button home*/
+
+.extra-button {
+  position: fixed;
+  top: 160px;
+  left: 48%;
+  transform: translate(-50%, -50%); /* perfectly center */
+  color: white;
+  background-color: #f229de;
+  border: solid black 2px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none; /* remove underline */
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}

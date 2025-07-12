@@ -1,7 +1,7 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
@@ -74,3 +74,13 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+
+#unauthorized-modal {
+  position: fixed;
+  margin-top: -800px;
+  margin-left: 30%;
+  z-index: 9999;
+}
+
+

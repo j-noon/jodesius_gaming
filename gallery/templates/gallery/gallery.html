@@ -6,12 +6,16 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
+<link rel="stylesheet" href="{% static 'base/css\base.css' %}"> 
 {% endblock %}
 
 {% block content %}
 <!-- this is gallery views html-->
 
 <body>
+   
+      <a href="{% url 'home' %}" class="extra-button">Home</a>
+   
 
       <section id="gallery-section">
   <h2>Gallery</h2>
