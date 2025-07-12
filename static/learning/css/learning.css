@@ -1,3 +1,8 @@
+#nmap-section {
+  margin-top: 50px;
+}
+
+
 /* ===== MAIN BUTTONS ===== */
 #nmap-button, #brute-button {
   margin-left: auto;
@@ -43,7 +48,7 @@
 /*extra button home*/
 
 .extra-button {
-  position: fixed;
+  position: absolute;
   top: 160px;
   left: 48%;
   transform: translate(-50%, -50%); /* perfectly center */
