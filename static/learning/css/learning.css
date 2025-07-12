@@ -35,3 +35,7 @@
   transform: translateY(1px);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
+
+#nmap-terminal-image{
+  max-width: 80%;
+}

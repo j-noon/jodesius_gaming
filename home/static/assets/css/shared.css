@@ -1,0 +1,85 @@
+/* header section*/
+
+/* Title Styles */
+#title {
+    text-align: center;
+    margin: 10px auto; /* Centers horizontally */
+    padding: 5px;
+    position: relative; /* Needed for logo positioning */
+    width: 80%; /* Adjust as needed */
+    z-index: 1;
+}
+
+/* Logo Link Styles */
+#logo-link {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+/* Logo Image Styles */
+#logo-home {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block; /* Removes extra space under image */
+}
+
+#logo-home:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    #logo-home {
+        width: 60px;
+        height: 60px;
+    }
+    #title {
+        font-size: 1.8rem;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #logo-home {
+        width: 70px;
+        height: 70px;
+        right: 30px;
+        top: 20px;
+    }
+    #title {
+        font-size: 2.2rem;
+        margin-top: 20px;
+    }
+}
+
+footer {
+  margin-left: 1px;
+  background-color: #f229de;
+  position: fixed;
+  bottom: 0%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 98%;
+  border: solid black 2px;
+}
+
+#footer {
+  width: 98%;
+  margin-left: 0%;
+}
+
+.icons {
+  padding: 5px;
+  text-align: center;
+  list-style-type: none;
+  display: inline-block;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.icons img {
+  height: 50px;
+}

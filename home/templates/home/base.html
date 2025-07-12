@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/shared.css' %}">
 
         <!-- Extra CSS from child templates -->
     {% block extra_css %}{% endblock %}
@@ -23,10 +24,12 @@
 <body>
     <!-- Header -->
     <header>
-        <h1 id="tittle">Jodesius Gaming</h1>
+        <h1 id="title">Jodesius Gaming</h1>
         <a id="logo-link" href="{% url 'home' %}">
-            <img id="logo-home" src="{% static 'assets/images/jodesius-profile-web.webp' %}" alt="jodesius gamings logo" />
-        </a>
+        <img id="logo-home" 
+         src="http://res.cloudinary.com/ddmslr9na/image/upload/v1752270077/gallery/rrcd0ukr8erh43r9qqul.webp" 
+         alt="Jodesius Gaming logo">
+</a>
 <nav id="nav-section">
     <ul id="nav-list">
         <!-- Modified Gallery Button -->
@@ -59,13 +62,13 @@
     <!-- Footer -->
     <footer>
         <a href="https://www.facebook.com/jodesius/" target="_blank" class="icons" rel="noopener">
-            <img src="{% static 'assets/images/facebook-logo-75x75.png' %}" />
+            <img alt="My Image" class="my-image" src="http://res.cloudinary.com/ddmslr9na/image/upload/v1752275734/gallery/d247strjbyy4lvezee6m.webp"/>
         </a>
         <a href="https://discord.com/" target="_blank" class="icons" rel="noopener">
-            <img src="{% static 'assets/images/discord-logo-75x75.png' %}" />
+            <img src="http://res.cloudinary.com/ddmslr9na/image/upload/v1752275945/gallery/q7dxkps04flwrpczqzis.webp"/>
         </a>
         <a href="https://www.twitch.tv/jodesiusgamingrelaunched" target="_blank" class="icons" rel="noopener">
-            <img src="{% static 'assets/images/twitch-logo-75x75.png' %}" />
+            <img src="http://res.cloudinary.com/ddmslr9na/image/upload/v1752275880/gallery/pzmngvwzwzyhzkznycse.webp" style="max-height: 100px;" />
         </a>
     </footer>
 
