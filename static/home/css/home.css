@@ -95,7 +95,7 @@
   margin-left: 5px;
   max-width: 98%;
   max-height: 200px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 #trailer-container video {
@@ -186,6 +186,7 @@
   opacity: 1;
   transform: translateX(0);
   transition: transform 1s ease-out, opacity 1s ease-out;
+  z-index: 9000;
 }
 
 #comment-btn {
@@ -217,14 +218,21 @@
    /*425 media screen*/
 @media (min-width: 425px) {
 
-    #comment-btn {
-      position: absolute;
-      margin-top: 50px;
-      margin-bottom: 50px;
-      padding: 10px;
-      left: 2%;
-      bottom: -210px;
-    }
+#comment-btn {
+  background-color: #f229de;
+  border: 2px solid black;
+  color: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 100px;
+  margin-left: 40%;
+  display: block;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  width: fit-content;
+}
 
    #comments-container {
     margin-bottom: 140px;
@@ -256,14 +264,20 @@
 
 
     /*comment section*/
-    #comment-btn {
-      position: absolute;
-      margin-top: 50px;
-      margin-bottom: 50px;
-      padding: 20px;
-      left: 4%;
-      bottom: -480px;
-    }
+#comment-btn {
+  background-color: #f229de;
+  border: 2px solid black;
+  color: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 50%;
+  display: block;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  width: fit-content;
+}
 
     #comments-container {
       margin-bottom: 200px;
