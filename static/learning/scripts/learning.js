@@ -1,4 +1,4 @@
-// learning/static/learning/js/learning.js
+/* global document, setTimeout */  // Declare browser globals to satisfy linter
 
 document.addEventListener('DOMContentLoaded', function() {
   // ========== Nmap Modal ==========
@@ -41,16 +41,17 @@ Hydra v9.5 (c) 2025 by van Hauser/THC & others
     let i = 0;
     const el = document.getElementById(elementId);
     if (!el) return;
-    
+
     el.innerHTML = '';
-    
+
     function type() {
       if (i < text.length) {
         el.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-        i++;
+        i += 1; // replaces i++
         setTimeout(type, speed);
       }
     }
+
     type();
   }
 
@@ -62,14 +63,17 @@ Hydra v9.5 (c) 2025 by van Hauser/THC & others
   }
 
   // Close handlers for brute modal
-  [bruteCloseBtn, bruteCloseSpan].forEach(element => {
-    if (element) element.addEventListener('click', () => {
-      bruteModal.style.display = 'none';
-    });
+  [bruteCloseBtn, bruteCloseSpan].forEach((element) => {
+    if (element) {
+      element.addEventListener('click', () => {
+        bruteModal.style.display = 'none';
+      });
+    }
   });
 
   // Close when clicking outside modal content
-  [nmapModal, bruteModal].forEach(modal => {
+  [nmapModal, bruteModal].forEach((modalEl) => {
+    const modal = modalEl; // avoid assigning to parameter
     if (modal) {
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
