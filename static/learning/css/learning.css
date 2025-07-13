@@ -26,6 +26,10 @@
   max-width: 250px;
 }
 
+#brute-button {
+  margin-bottom: 50px;
+}
+
 /* Hover Effects */
 #nmap-button:hover, #brute-button:hover {
   background-color: #000;
@@ -51,14 +55,62 @@
   position: absolute;
   top: 160px;
   left: 48%;
-  transform: translate(-50%, -50%); /* perfectly center */
+  transform: translate(-50%, -50%);
   color: white;
   background-color: #f229de;
   border: solid black 2px;
   font-size: large;
   border-radius: 8px;
   padding: 4px 8px;
-  text-decoration: none; /* remove underline */
+  text-decoration: none;
   display: inline-block;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/*MEDIA QUERRIES*/
+
+/*375 media screen*/
+@media screen and (min-width: 375px) {
+
+  .extra-button {
+  position: absolute;
+  top: 125px;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #f229de;
+  border: solid black 2px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+#brute-button {
+  margin-bottom: 70px;
+ }
+}
+
+/*768 media screen*/
+@media screen and (min-width: 768px){
+
+    .extra-button {
+  position: absolute;
+  top: 125px;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #f229de;
+  border: solid black 2px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+
 }
