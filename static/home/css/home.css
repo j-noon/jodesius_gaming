@@ -190,6 +190,8 @@
   z-index: 9000;
 }
 
+
+/*comment buttons*/
 #comment-btn {
   background-color: #f229de;
   border: 2px solid black;
@@ -205,6 +207,44 @@
   font-family: inherit;
   width: fit-content;
 }
+
+
+.button-group {
+  position: relative;
+}
+
+
+#delete-last-btn {
+  position: absolute;
+  top: 0px;
+  right: -4px;
+  border: solid black 2px;
+  border-radius: 8px;
+  background-color: #f229de;
+  color: white;
+  padding: 10px; 
+}
+
+#delete-last-btn:hover {
+  background-color: red;
+}
+
+#edit-last-btn {
+  position: absolute;
+  top: 0px;
+  left: 22px;
+  border: solid black 2px;
+  border-radius: 8px;
+  background-color: #f229de;
+  color: white;
+  padding: 10px; 
+}
+
+#edit-last-btn:hover {
+  background-color: orange;
+}
+
+
 
 #comment-btn:hover {
   background-color: green;

@@ -44,7 +44,7 @@
     </div>
     {% endif %}
 
-<!-- Comments Section styled as chat -->
+<!-- Comments Section-->
 <div id="comments-container">
   <h2 id="coments-title">Comments and Suggestions</h2>
 
@@ -58,10 +58,16 @@
   </div>
 
   {% if user.is_authenticated %}
-    <form method="POST">
+    <form method="POST" id="comment-form">
       {% csrf_token %}
       {{ form.text }}
-      <button id="comment-btn" type="submit">Send</button>
+      <div class="button-group">
+        <button id="comment-btn" type="submit">Send</button>
+        {% if comments.exists %}
+          <button type="button" id="delete-last-btn" class="action-btn" data-comment-id="{{ last_user_comment.id }}">Delete Last</button>
+                <button type="button" id="edit-last-btn" class="action-btn" data-comment-id="{{ last_user_comment.id }}">Edit Last</button>
+        {% endif %}
+      </div>
     </form>
   {% else %}
     <p style="text-align: center;">Please <a href="{% url 'login' %}">log in</a> to comment.</p>
@@ -84,4 +90,5 @@
   }, 10000);  // 10 seconds
 </script>
 <script src="{% static 'home/js/aboutme.js' %}"></script>
+<script src="{% static 'home/js/comments.js' %}"></script>
 {% endblock %}
