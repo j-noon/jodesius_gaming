@@ -39,3 +39,82 @@
   display: inline-block;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
+
+
+/*MEDIA QEURRIES*/
+/*375 media screen*/
+@media screen and (min-width: 375px){
+
+    .extra-button {
+  position: absolute;
+  top: 125px;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #f229de;
+  border: solid black 2px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+ }
+}
+
+/*425 media screen*/
+@media (min-width: 425px) {
+  #gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+    #gallery-grid img {
+  max-width: 190px;
+  max-height: 200px;
+  object-fit: cover;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #fff;
+ }
+}
+
+
+/*768 media screen*/
+@media (min-width: 768px) {
+ #gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #gallery-grid img {
+  max-width: 230px;
+  max-height: 230px;
+  object-fit: cover;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #fff;
+ }
+}
+
+
+/*1024 media screen*/
+@media (min-width: 1024px) {
+ #gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #game1{
+  text-align: left;
+  margin-left: 5px;
+}
+
+#memory-game-title{
+ margin-left: -700px;
+}
+
+  #nmap-terminal-image{
+  padding: 10px;
+  width: 95%;
+  height: 220px;
+  display: block;
+}
+}
