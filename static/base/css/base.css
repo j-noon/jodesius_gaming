@@ -116,6 +116,7 @@ footer {
   background-color: #f229de;
   position: fixed;
   bottom: 0%;
+  margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
   width: 98%;
@@ -140,9 +141,21 @@ footer {
   height: 50px;
 }
 
+/*MEDIA QUERRIES*/
 
+/*320 media screen*/
+@media screen and (min-width: 375px) {
+  #title {
+    margin-left: -5px;
+  }
 
-/* Responsive Adjustments */
+  #logo-link {
+    position: absolute;
+    top: 5px;
+  }
+}
+
+   /*768 media screen*/
 @media (min-width: 768px) {
     #logo-home {
         width: 60px;
@@ -151,8 +164,26 @@ footer {
     #title {
         font-size: 1.8rem;
         margin-top: 15px;
+        margin-left: 70px;
     }
-}
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 1200px) {
     #logo-home {

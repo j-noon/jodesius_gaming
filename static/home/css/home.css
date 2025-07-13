@@ -45,9 +45,6 @@
   border: solid black 2px;
 }
 
-
-
-
 /*about me section*/
 
 #abt-me-h2 {
@@ -92,8 +89,6 @@
 }
 
 
-
-
 /*trailer section*/
 
 #trailer-container {
@@ -107,7 +102,6 @@
   width: 98%;
   height: 200px;
 }
-
 
 
 /* comments section styled like a chat box */
@@ -195,7 +189,7 @@
 }
 
 #comment-btn {
-  background-color: #f229de; /* Your signature pink */
+  background-color: #f229de;
   border: 2px solid black;
   color: white;
   padding: 8px 16px;
@@ -203,11 +197,11 @@
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 100px;
-  margin-left: 35%;
+  margin-left: 40%;
   display: block;
   transition: all 0.3s ease;
-  font-family: inherit; /* Matches your monospace font */
-  width: fit-content; /* Prevents button from stretching full width */
+  font-family: inherit;
+  width: fit-content;
 }
 
 #comment-btn:hover {
@@ -216,3 +210,83 @@
   border-color: black;
   transform: scale(1.02); /* Subtle "pop" effect */
   box-shadow: 0 2px 5px black;
+}
+
+ /*MEDIA QUERRIES*/
+
+   /*425 media screen*/
+@media (min-width: 425px) {
+
+    #comment-btn {
+      position: absolute;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding: 10px;
+      left: 2%;
+      bottom: -210px;
+    }
+
+   #comments-container {
+    margin-bottom: 140px;
+   }
+}
+
+   /*768 media screen*/
+@media (min-width: 768px) {
+   
+    /*hero section*/
+    #hero-image {
+      margin-bottom: 120px;
+    }
+
+    #hero-image img {
+      height: 400px;
+    }
+
+     /*about me section*/
+
+
+
+     
+    /*trailer section*/
+    #trailer-container {
+      height: 300px;
+      padding-bottom: 30px;
+    }
+
+
+    /*comment section*/
+    #comment-btn {
+      position: absolute;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding: 20px;
+      left: 4%;
+      bottom: -480px;
+    }
+
+    #comments-container {
+      margin-bottom: 200px;
+      margin-top: 10px;
+    }
+
+    #video-twitch {
+      height: 500px;
+    }
+
+    #comment-feed {
+      padding: 5px 5px;
+    }
+   }
+
+     /*768 media screen*/
+@media (min-width: 1024px) {
+
+  #hero-image img {
+    margin-left: 25px;
+  }
+
+  #comments-container {
+    padding-left: 8%;
+  }
+}
