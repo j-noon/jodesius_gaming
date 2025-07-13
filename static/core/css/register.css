@@ -1,10 +1,12 @@
 .modal {
+  padding-bottom: 60px;
+  margin-left: -6px;
   display: none;
   position: fixed;
   z-index: 999;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 90%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
@@ -81,6 +83,39 @@
   margin-top: -800px;
   margin-left: 30%;
   z-index: 9999;
+}
+
+/*MEDIA QUERRIES*/
+   /*768 media screen*/
+@media (min-width: 768px) {
+  .modal {
+  margin-left: 20%;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+ }
+}
+
+   /*1024 media screen*/
+@media (min-width: 1024px) {
+  .modal {
+  margin-left: 28%;
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+ }
 }
 
 

@@ -119,7 +119,7 @@ footer {
   margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
-  width: 98%;
+  width: 100%;
   border: solid black 2px;
 }
 
@@ -166,63 +166,9 @@ footer {
         margin-top: 15px;
         margin-left: 70px;
     }
+
+    #footer {
+      width: 100%;
+      margin-left: 0%;
+    }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 1200px) {
-    #logo-home {
-        width: 70px;
-        height: 70px;
-        right: 30px;
-        top: 20px;
-    }
-    #title {
-        font-size: 2.2rem;
-        margin-top: 20px;
-    }
-}
-
-footer {
-  margin-left: 1px;
-  background-color: #f229de;
-  position: fixed;
-  bottom: 0%;
-  display: flex;
-  justify-content: space-evenly;
-  width: 98%;
-  border: solid black 2px;
-}
-
-#footer {
-  width: 98%;
-  margin-left: 0%;
-}
-
-.icons {
-  padding: 5px;
-  text-align: center;
-  list-style-type: none;
-  display: inline-block;
-  justify-content: center;
-  justify-content: space-between;
-}
-
-.icons img {
-  height: 50px;
-}
