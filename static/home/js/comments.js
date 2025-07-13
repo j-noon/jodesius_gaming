@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Delete button functionality
+    // Delete button functionality (unchanged)
     document.getElementById('delete-last-btn')?.addEventListener('click', function() {
         const commentId = this.getAttribute('data-comment-id');
         if (confirm('Are you sure you want to delete this comment?')) {
-            // Get the CSRF token from the existing form
-            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-            
-            // Create form data
             const formData = new FormData();
-            formData.append('csrfmiddlewaretoken', csrfToken);
+            formData.append('csrfmiddlewaretoken', document.querySelector('[name=csrfmiddlewaretoken]').value);
             formData.append('comment_id', commentId);
             
-            // Send the request
             fetch('/delete-comment/', {
                 method: 'POST',
                 body: formData,
@@ -21,19 +16,25 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => {
                 if (response.redirected) {
-                    window.location.href = response.url;  // Follow the redirect
+                    window.location.href = response.url;
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('Delete error:', error));
         }
     });
 
-    // Edit button functionality (unchanged)
+    // Edit button functionality (modified to remove the prompt text)
     document.getElementById('edit-last-btn')?.addEventListener('click', function() {
         const commentId = this.getAttribute('data-comment-id');
-        const commentText = document.querySelector(`.single-comment[data-comment-id="${commentId}"] .comment-text`).textContent;
-        document.getElementById('id_text').value = commentText;
+        const textInput = document.getElementById('id_text');
         
+        if (!textInput) return;
+        
+        // Removed the "Please edit here>> " line completely
+        textInput.value = ""; // Now just clears the field
+        textInput.focus();
+        
+        // Set up edit mode
         let editInput = document.getElementById('edit_comment_id');
         if (!editInput) {
             editInput = document.createElement('input');
