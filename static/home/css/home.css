@@ -92,15 +92,16 @@
 /*trailer section*/
 
 #trailer-container {
-  margin-left: 5px;
-  max-width: 98%;
-  max-height: 200px;
-  margin-bottom: 100px;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 90%;
+  height: 150px;
+  margin-bottom: 50px;
 }
 
-#trailer-container video {
-  width: 98%;
-  height: 200px;
+#video-twitch {
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -218,6 +219,21 @@
    /*425 media screen*/
 @media (min-width: 425px) {
 
+  /*trailer section*/
+
+#trailer-container {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 90%;
+  height: 150px;
+  margin-bottom: 50px;
+}
+
+#video-twitch {
+  width: 100%;
+  height: 130%;
+}
+
 #comment-btn {
   background-color: #f229de;
   border: 2px solid black;
@@ -235,8 +251,26 @@
 }
 
    #comments-container {
-    margin-bottom: 140px;
+    padding-top: 50px;
+    margin-bottom: 170px;
    }
+
+   #comment-message {
+    margin-top: 30px;
+    background-color: #f229de;
+    color: white;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+    opacity: 1;
+    transform: translateY(50px);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 9000;
+ }
 }
 
    /*768 media screen*/
@@ -258,9 +292,34 @@
      
     /*trailer section*/
     #trailer-container {
-      height: 300px;
-      padding-bottom: 30px;
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 90%;
+      height: 150px;
+      margin-bottom: 50px;
     }
+
+    #video-twitch {
+      width: 100%;
+      height: 130%;;
+    }
+
+    #comment-message {
+    margin-top: 30px;
+    background-color: #f229de;
+    color: white;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+    opacity: 1;
+    transform: translateY(300px);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 9000;
+   }
 
 
     /*comment section*/
@@ -279,21 +338,21 @@
   width: fit-content;
 }
 
-    #comments-container {
-      margin-bottom: 200px;
-      margin-top: 10px;
-    }
+#comments-container {
+    margin-bottom: 100px;
+    margin-top: 350px;
+  }
 
-    #video-twitch {
-      height: 500px;
-    }
+#video-twitch {
+    height: 500px;
+  }
 
-    #comment-feed {
-      padding: 5px 5px;
-    }
-   }
+#comment-feed {
+    padding: 5px 5px;
+  }
+}
 
-     /*768 media screen*/
+     /*1024 media screen*/
 @media (min-width: 1024px) {
 
   #hero-image img {
@@ -303,4 +362,21 @@
   #comments-container {
     padding-left: 8%;
   }
+
+  #comment-message {
+    margin-top: 30px;
+    background-color: #f229de;
+    color: white;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: fit-content;
+    opacity: 1;
+    transform: translateY(350px);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 9000;
+   }
 }
