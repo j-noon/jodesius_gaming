@@ -2,8 +2,9 @@
 #unauthorized-modal {
   position: fixed;
   margin-top: -500px;
-  margin-left: 25%;
+  margin-left: 12px;
   z-index: 9999;
+  width: 90%;
 }
 
 

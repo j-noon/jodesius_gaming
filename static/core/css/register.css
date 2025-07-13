@@ -80,9 +80,10 @@
 
 #unauthorized-modal {
   position: fixed;
-  margin-top: -800px;
-  margin-left: 30%;
+  margin-top: -900px;
+  margin-left: 12px;
   z-index: 9999;
+  width: 90%;
 }
 
 /*MEDIA QUERRIES*/
