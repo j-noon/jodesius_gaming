@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
   protectedLinks.forEach(function (link) {
     link.addEventListener('click', function (e) {
       if (!document.body.classList.contains('logged-in')) {
-        e.preventDefault();
-        unauthorizedModal.style.display = 'block';
-        modalOverlay.style.display = 'block';
-        loginModal.classList.add('modal-blur');
+        if (unauthorizedModal && modalOverlay && loginModal) {
+          e.preventDefault();
+          unauthorizedModal.style.display = 'block';
+          modalOverlay.style.display = 'block';
+          loginModal.classList.add('modal-blur');
+        }
       }
     });
   });
