@@ -1,12 +1,11 @@
 <!-- gallery/templates/gallery/gallery.html -->
-{% extends 'home/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 
 {% block title %}Learning Hub{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
-<link rel="stylesheet" href="{% static 'base/css\base.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
 {% endblock %}
 
 {% block content %}

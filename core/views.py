@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout  # Add logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.views.decorators.http import require_POST
 
-
+# Keep your existing register view unchanged
 def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -12,9 +13,9 @@ def register_view(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'core/register.html', {'form': form})
 
-
+# Keep your existing login view unchanged
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
@@ -25,3 +26,9 @@ def login_view(request):
     else:
         form = AuthenticationForm()
     return render(request, 'core/login.html', {'form': form})
+
+# Add this simple logout view
+@require_POST
+def logout_view(request):
+    logout(request)
+    return redirect('core:login')  # Direct redirect to login page

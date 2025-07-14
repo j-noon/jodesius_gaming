@@ -1,9 +1,8 @@
-{% extends 'home/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'base/css\base.css' %}">
-    <link rel="stylesheet" href="{% static 'core\css\login.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/login.css' %}">
 {% endblock %}
 
 
@@ -36,5 +35,9 @@
     </div>
 </div>
 <div class="modal-overlay" style="display: none;"></div>
+
+{% block extra_js %}
+<script src="{% static 'js/core/register_modal.js' %}"></script>
+{% endblock %}
 
 {% endblock %}

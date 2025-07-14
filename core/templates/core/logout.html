@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+<div class="logout-message">
+    <h2>You have been successfully logged out</h2>
+    <p>You will be redirected to the login page in 3 seconds...</p>
+    <p>If not, <a href="{% url 'core:login' %}">click here</a> to login again.</p>
+</div>
+{% endblock %}

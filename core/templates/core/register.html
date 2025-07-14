@@ -1,10 +1,9 @@
-{% extends 'home/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'base/css\base.css' %}">
-    <link rel="stylesheet" href="{% static 'core\css\register.css' %}">
+   <link rel="stylesheet" href="{% static 'core/css/login.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -21,6 +20,6 @@
 </div>
 
 {% block extra_js %}
-<script src="{% static 'core/js/register_modal.js' %}"></script>
+<script src="{% static 'js/core/register_modal.js' %}"></script>
 {% endblock %}
 {% endblock %}

@@ -1,12 +1,11 @@
 <!-- learning/templates/learning/learning.html -->
-{% extends 'home/base.html' %}
+{% extends "core/base.html" %}
 {% load static %}
 
 {% block title %}Learning Hub{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'learning/css/learning.css' %}">
-<link rel="stylesheet" href="{% static 'base/css\base.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/learning.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -266,5 +265,5 @@ Hydra v9.5 (c) 2025 by van Hauser/THC & others
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'learning/scripts/learning.js' %}"></script>
+<script src="{% static 'js/learning/learning.js' %}"></script>
 {% endblock %}
