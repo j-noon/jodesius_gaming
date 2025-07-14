@@ -86,6 +86,10 @@
   font-weight: bold;
 }
 
+.nav-btn {
+  padding-right: 5px;
+}
+
 /*MEDIA QUERRIES*/
    /*768 media screen*/
 @media (min-width: 768px) {

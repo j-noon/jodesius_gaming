@@ -44,10 +44,10 @@ h2 {
 /* Title Styles */
 #title {
     text-align: center;
-    margin: 10px auto; /* Centers horizontally */
+    margin: 10px auto;
     padding: 5px;
-    position: relative; /* Needed for logo positioning */
-    width: 80%; /* Adjust as needed */
+    position: relative;
+    width: 80%;
     z-index: 1;
 }
 
@@ -84,18 +84,20 @@ h2 {
 
 /*navigation*/
 
-#nav-section {
-  text-align: center;
-}
 
 #nav-list {
   list-style: none;
-  margin-left: -50px;
+  display: flex;
+  justify-content: right;
+
+}
+
+#nav-list li {
+  padding-right: 5px;
 }
 
 .nav-btn {
   display: inline-block;
-  justify-content: space-between;
   padding: 4px;
   margin-top: 2px;
   background-color: #f229de;
@@ -103,41 +105,47 @@ h2 {
   border-radius: 8px;
 }
 
+#login-btn {
+  padding-right: 5px;
+}
+
 .nav-btn:hover {
   background-color: white;
   color: black;
 }
 
+#gallery-link {
+  text-decoration: none;
+}
+
+#learning-link {
+  text-decoration: none;
+}
+
 /*footer section*/
 
 footer {
-  margin-left: 1px;
   background-color: #f229de;
   position: fixed;
-  bottom: 0%;
-  margin-top: 100px;
-  display: flex;
-  justify-content: space-evenly;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  border: solid black 2px;
-}
-
-#footer {
-  width: 98%;
-  margin-left: 0%;
-}
-
-.icons {
-  padding: 5px;
-  text-align: center;
-  list-style-type: none;
-  display: inline-block;
+  display: flex;
   justify-content: center;
-  justify-content: space-between;
+  gap: 5rem;
+  padding: 0.5rem 0;
+  border: 2px solid black;
+  z-index: 1000;
 }
 
-.icons img {
+footer a {
+  display: inline-block;
+  padding: 5px;
+}
+
+footer img {
   height: 50px;
+  width: 50px;
 }
 
 /*MEDIA QUERRIES*/
