@@ -1,1 +1,1 @@
-web: gunicorn jodesiusgaming.wsgi
+web: gunicorn jodesius_gaming.wsgi
