@@ -1,9 +1,10 @@
+{% load static %}
+
 <!-- home/templates/home/base.html -->
  
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    {% load static %}
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="jodesius gamings streamer and personal advertisement web application."/>
@@ -70,7 +71,6 @@
 
 
 {% block extra_js %}
-    <script src="{% static 'home/js/script.js' %}"></script>
     <script src="{% static 'core/js/auth_modal.js' %}"></script>
 {% endblock %}
 </body>
