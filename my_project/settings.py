@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import whitenoise
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -40,9 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'cloudinary',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'learning',
     'gallery',
     'home',
@@ -153,21 +154,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / "core/static",  # Explicitly include app static
-]
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Where collectstatic puts files
 
-# WhiteNoise configuration
-STATICFILES_STORAGE = 'none'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # ✅ only include your project-level static folder
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# STATICFILES_STORAGE = 'none'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-import django_heroku
-django_heroku.settings(locals())

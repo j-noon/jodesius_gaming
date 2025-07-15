@@ -1,0 +1,190 @@
+/* color picks
+   pink        #f229de
+   dark-purple #8b097e
+   white       #000000
+   black       #ffffff
+*/
+
+/* wildcard styles*/
+* {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+body {
+  background-color: slategray;
+}
+
+h2 {
+  text-align: center;
+  padding: 5px;
+}
+
+.headings {
+  padding: 8px;
+}
+
+.subheadings {
+  padding: 8px;
+}
+
+.paragraphs {
+  padding: 5px;
+  border: solid black 2px;
+  border-radius: 8px;
+
+  background-color: #8b097e;
+}
+
+
+/* header section*/
+
+/* Title Styles */
+#title {
+    text-align: center;
+    margin: 10px auto;
+    padding: 5px;
+    position: relative;
+    width: 80%;
+    z-index: 1;
+}
+
+/* Logo Link Styles */
+#logo-link {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+#logo-link img {
+  max-width: 50px;
+  max-height: 50px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+/* Logo Image Styles */
+#logo-home {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block; /* Removes extra space under image */
+}
+
+#logo-home:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/*navigation*/
+
+
+#nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-list li {
+  padding-right: 5px;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 4px;
+  margin-top: 2px;
+  background-color: #f229de;
+  border: solid black 3px;
+  border-radius: 8px;
+}
+
+#login-btn {
+  padding-right: 5px;
+}
+
+.nav-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+#gallery-link {
+  text-decoration: none;
+}
+
+#learning-link {
+  text-decoration: none;
+}
+
+/*footer section*/
+
+footer {
+  background-color: #f229de;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0.5rem 0;
+  border: 2px solid black;
+  z-index: 1000;
+}
+
+footer a {
+  display: inline-block;
+  padding: 5px;
+}
+
+footer img {
+  height: 50px;
+  width: 50px;
+}
+
+/*MEDIA QUERRIES*/
+
+/*320*/
+@media screen and (max-width: 320px) {
+
+  #nav-list {
+  list-style: none;
+  display: flex;
+  margin-left: -30px;
+ }
+}
+
+/*375 media screen*/
+@media screen and (min-width: 375px) {
+  #title {
+    margin-left: -5px;
+  }
+
+  #logo-link {
+    position: absolute;
+    top: 5px;
+  }
+}
+
+   /*768 media screen*/
+@media (min-width: 768px) {
+    #logo-home {
+        width: 60px;
+        height: 60px;
+    }
+    #title {
+        font-size: 1.8rem;
+        margin-top: 15px;
+        margin-left: 70px;
+    }
+
+    #footer {
+      width: 100%;
+      margin-left: 0%;
+    }
+  }
