@@ -27,7 +27,7 @@
 .extra-button {
   position: absolute;
   top: 160px;
-  left: 48%;
+  left: 53%;
   transform: translate(-50%, -50%); /* perfectly center */
   color: white;
   background-color: #f229de;
@@ -48,7 +48,7 @@
     .extra-button {
   position: absolute;
   top: 125px;
-  left: 49%;
+  left: 56%;
   transform: translate(-50%, -50%);
   color: white;
   background-color: #f229de;
@@ -80,7 +80,7 @@
 
 
 /*768 media screen*/
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
  #gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -92,6 +92,22 @@
   border: 2px solid black;
   border-radius: 5px;
   background-color: #fff;
+ }
+
+  .extra-button {
+  position: absolute;
+  top: 125px;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #f229de;
+  border: solid black 2px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
  }
 }
 
@@ -108,4 +124,20 @@
   height: 220px;
   display: block;
 }
+
+  .extra-button {
+  position: absolute;
+  top: 125px;
+  left: 538px;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #f229de;
+  border: solid black 2px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+ }
 }
