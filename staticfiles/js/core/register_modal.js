@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Create or reuse modal elements
+   
     let unauthorizedModal = document.getElementById('unauthorized-modal');
     let modalOverlay = document.querySelector('.modal-overlay');
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(modalOverlay);
     }
 
-    // Add this CSS dynamically to style the links
+    
     const style = document.createElement('style');
     style.textContent = `
         .text-link {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Rest of your existing JavaScript...
+   
     const showModal = () => {
         unauthorizedModal.style.display = 'block';
         modalOverlay.style.display = 'block';

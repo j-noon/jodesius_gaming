@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get modal elements - will be null if conditionally hidden
     const unauthorizedModal = document.getElementById('unauthorized-modal');
     const modalOverlay = document.querySelector('.modal-overlay');
     const loginModal = document.querySelector('.modal');
 
-    // Debug: Force-check if elements exist in DOM (even if hidden)
+    
     console.log('DOM Elements:', {
         unauthorizedModal: document.getElementById('unauthorized-modal'),
         modalOverlay: document.querySelector('.modal-overlay'),
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Only set up handlers if elements exist
     if (unauthorizedModal && modalOverlay && loginModal) {
-        // Show modal function
+        
         const showModal = () => {
             unauthorizedModal.style.display = 'block';
             modalOverlay.style.display = 'block';

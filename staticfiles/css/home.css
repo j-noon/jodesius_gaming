@@ -52,7 +52,7 @@
   padding: 8px;
   font-size: large;
   width: fit-content;
-  background-color: #f229de;
+  background-color: #910883;
   border: solid black 2px;
   border-radius: 8px;
 }
@@ -69,7 +69,7 @@
   border: solid black 2px;
   border-radius: 8px;
   padding: 5px;
-  background-color: #f229de;
+  background-color: #910883;
   position: absolute;
   z-index: 999;
   left: -11700px;
@@ -82,7 +82,7 @@
   border: solid black 2px;
   border-radius: 8px;
   padding: 5px;
-  background-color: #f229de;
+  background-color: #910883;
   position: absolute;
   z-index: 999;
   left: 5px
@@ -140,7 +140,7 @@
 }
 
 .single-comment strong {
-  color: #f229de;
+  color: #910883;
   font-weight: bold;
 }
 
@@ -152,7 +152,7 @@
   padding: 8px;
 }
 #comments-container textarea::placeholder {
-  color: #f229de;
+  color: #910883;
   font-style: italic;
 }
 
@@ -175,7 +175,7 @@
 
 /* Message notification */
 #comment-message {
-  background-color: #f229de;
+  background-color: #910883;
   color: white;
   padding: 8px;
   border: 2px solid black;
@@ -190,10 +190,14 @@
   z-index: 9000;
 }
 
+#li-to-hide {
+  list-style: none;
+}
+
 
 /*comment buttons*/
 #comment-btn {
-  background-color: #f229de;
+  background-color: #910883;
   border: 2px solid black;
   color: white;
   padding: 8px 16px;
@@ -220,7 +224,7 @@
   right: -4px;
   border: solid black 2px;
   border-radius: 8px;
-  background-color: #f229de;
+  background-color: #910883;
   color: white;
   padding: 10px; 
 }
@@ -235,7 +239,7 @@
   left: 22px;
   border: solid black 2px;
   border-radius: 8px;
-  background-color: #f229de;
+  background-color: #910883;
   color: white;
   padding: 10px; 
 }
@@ -275,7 +279,7 @@
 }
 
 #comment-btn {
-  background-color: #f229de;
+  background-color: #910883;
   border: 2px solid black;
   color: white;
   padding: 8px 16px;
@@ -297,7 +301,7 @@
 
    #comment-message {
     margin-top: 30px;
-    background-color: #f229de;
+    background-color: #910883;
     color: white;
     padding: 8px;
     border: 2px solid black;
@@ -346,7 +350,7 @@
 
     #comment-message {
     margin-top: 30px;
-    background-color: #f229de;
+    background-color: #910883;
     color: white;
     padding: 8px;
     border: 2px solid black;
@@ -364,7 +368,7 @@
 
     /*comment section*/
 #comment-btn {
-  background-color: #f229de;
+  background-color: #910883;
   border: 2px solid black;
   color: white;
   padding: 8px 16px;
@@ -405,7 +409,7 @@
 
   #comment-message {
     margin-top: 30px;
-    background-color: #f229de;
+    background-color: #910883;
     color: white;
     padding: 8px;
     border: 2px solid black;
