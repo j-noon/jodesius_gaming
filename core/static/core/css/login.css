@@ -10,6 +10,7 @@
 
 .modal {
   margin: 2px;
+  margin-top: 10px;
   display: none;
   position: fixed;
   z-index: 9999;
@@ -90,7 +91,23 @@
   padding-right: 5px;
 }
 
+#register-btn {
+  position: absolute;
+  left: 20%;
+}
+
 /*MEDIA QUERRIES*/
+   /*375 media screen*/
+@media screen and (min-width: 375px) {
+
+    #register-btn {
+  position: absolute;
+  left: 28%;
+}
+}
+
+
+
    /*768 media screen*/
 @media (min-width: 768px) {
   .modal {
@@ -105,6 +122,11 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
  }
+
+ #register-btn {
+  position: absolute;
+  left: 39%;
+}
 }
 
    /*1024 media screen*/
@@ -121,4 +143,9 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.6);
  }
+
+  #register-btn {
+  position: absolute;
+  left: 41%;
+}
 }

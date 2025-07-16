@@ -112,7 +112,9 @@ h2 {
 }
 
 #login-btn {
+  position: absolute;
   padding-right: 5px;
+  left: 50%;
 }
 
 .nav-btn:hover {
