@@ -5,13 +5,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="jodesius gamings streamer and personal advertisement web application."/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="jodesius gamings streamer and personal advertisement web application.">
     <title>JodesiusGaming</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="180x180" href="https://res.cloudinary.com/ddmslr9na/image/upload/v1752501444/medievil-castle-web180x180_dzlrhv.webp"/>
+    <link rel="icon" type="image/png" sizes="180x180" href="https://res.cloudinary.com/ddmslr9na/image/upload/v1752501444/medievil-castle-web180x180_dzlrhv.webp">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
         <!-- Extra CSS from child templates -->
@@ -37,7 +37,7 @@
 
         <!-- Modified Learning Button -->
         <li><a href="{% if user.is_authenticated %}{% url 'learning' %}{% else %}#{% endif %}" class="nav-btn protected-link" id="learning-link">Learning</a></li>
-           
+     </ul> 
     
 
         {% if user.is_authenticated %}
@@ -49,7 +49,7 @@
             <a id="login-btn" href="{% url 'login' %}"><li class="nav-btn">Login</li></a>
             <a href="{% url 'register' %}"><li class="nav-btn">Register</li></a>
         {% endif %}
-    </ul>
+    
 </nav>
     </header>
 

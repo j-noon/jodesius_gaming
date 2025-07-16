@@ -30,7 +30,7 @@
   left: 53%;
   transform: translate(-50%, -50%); /* perfectly center */
   color: white;
-  background-color: #f229de;
+  background-color: #910883;
   border: solid black 2px;
   font-size: large;
   border-radius: 8px;
@@ -51,7 +51,7 @@
   left: 56%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: #f229de;
+  background-color: #910883;
   border: solid black 2px;
   font-size: large;
   border-radius: 8px;
@@ -100,7 +100,7 @@
   left: 53%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: #f229de;
+  background-color: #910883;
   border: solid black 2px;
   font-size: large;
   border-radius: 8px;
@@ -128,10 +128,10 @@
   .extra-button {
   position: absolute;
   top: 125px;
-  left: 538px;
+  left: 51%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: #f229de;
+  background-color: #910883;
   border: solid black 2px;
   font-size: large;
   border-radius: 8px;

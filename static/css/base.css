@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: slategray;
+  background-color: #434D56;
 }
 
 h2 {
@@ -96,10 +96,11 @@ h2 {
 }
 
 .nav-btn {
+  font-size: ;
   display: inline-block;
   padding: 4px;
   margin-top: 2px;
-  background-color: #f229de;
+  background-color: #910883;
   border: solid black 3px;
   border-radius: 8px;
 }
@@ -119,6 +120,10 @@ h2 {
 
 #learning-link {
   text-decoration: none;
+}
+
+#listitem-to-hide {
+  list-style: none;
 }
 
 /*footer section*/
