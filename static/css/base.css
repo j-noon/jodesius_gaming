@@ -96,13 +96,19 @@ h2 {
 }
 
 .nav-btn {
-  font-size: ;
   display: inline-block;
   padding: 4px;
   margin-top: 2px;
   background-color: #910883;
   border: solid black 3px;
   border-radius: 8px;
+}
+
+.logout-form {
+  position: absolute;
+  top: 13%;
+  left: 6%;
+  padding: 4px;
 }
 
 #login-btn {
@@ -170,6 +176,13 @@ footer img {
     margin-left: -5px;
   }
 
+  .logout-form {
+    position: absolute;
+    top: 8%;
+    left: 14%;
+    padding: 4px;
+  }
+
   #logo-link {
     position: absolute;
     top: 5px;
@@ -177,7 +190,7 @@ footer img {
 }
 
    /*768 media screen*/
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     #logo-home {
         width: 60px;
         height: 60px;
@@ -192,4 +205,19 @@ footer img {
       width: 100%;
       margin-left: 0%;
     }
+
+    .logout-form {
+      position: absolute;
+      left: 33%;
+      padding: 4px;
+    }
   }
+
+     /*768 media screen*/
+@media screen and (min-width: 1024px) {
+    .logout-form {
+      position: absolute;
+      left: 38%;
+      padding: 4px;
+    }
+}
