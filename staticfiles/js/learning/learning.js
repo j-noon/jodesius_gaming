@@ -1,5 +1,3 @@
-// learning/static/learning/js/learning.js
-
 document.addEventListener('DOMContentLoaded', function() {
   // ========== Nmap Modal ==========
   const nmapButton = document.getElementById('nmap-button');
@@ -19,6 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
       nmapModal.style.display = 'none';
     });
   }
+
+  const nmapCloseSpan = document.getElementById('nmap-close-span');
+if (nmapCloseSpan) {
+  nmapCloseSpan.addEventListener('click', () => {
+    const nmapModal = document.getElementById('nmap-modal');
+    if (nmapModal) nmapModal.style.display = 'none';
+  });
+}
 
   // ========== Brute Force Modal ==========
   const bruteText = `<b>hydra -l admin -P wordlist.txt 192.234.1.10 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"</b>
