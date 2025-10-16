@@ -92,24 +92,26 @@
 /*trailer section*/
 
 #trailer-container {
-  margin-top: 10px;
-  margin-left: 10px;
-  width: 90%;
-  height: 150px;
-  margin-bottom: 50px;
+  margin: 16px auto 32px;
+  max-width: 1000px;
+  padding: 0 1rem;
 }
 
 #video-twitch {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 2px solid black;
+  object-fit: cover; 
 }
 
 
 /* comments section styled like a chat box */
 #comments-container {
-  width: 90vw;
-  max-width: 800px;
-  padding-left: 10px;
+  width: 90%;
+  margin: 24px -5px 0px;
+  padding: 0 1rem;
 }
 
 #coments-title {
@@ -174,21 +176,25 @@
 }
 
 /* Message notification */
-#comment-message {
-  background-color: #910883;
-  color: white;
-  padding: 8px;
-  border: 2px solid black;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-weight: bold;
-  width: fit-content;
-  opacity: 1;
-  transform: translateX(0);
-  transition: transform 1s ease-out, opacity 1s ease-out;
-  z-index: 9000;
-}
+  #comment-message {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 9000;
+    margin: 0;
+    background-color: #910883;
+    color: white;
+    padding: 8px 12px;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    width: max-content;
+    max-width: 90vw;
+    opacity: 1;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  }
 
 #li-to-hide {
   list-style: none;
@@ -269,13 +275,11 @@
   margin-top: 10px;
   margin-left: 10px;
   width: 90%;
-  height: 150px;
   margin-bottom: 50px;
 }
 
 #video-twitch {
   width: 100%;
-  height: 130%;
 }
 
 #comment-btn {
@@ -295,26 +299,26 @@
 }
 
    #comments-container {
-    padding-top: 50px;
-    margin-bottom: 170px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
    }
+}
 
-   #comment-message {
-    margin-top: 30px;
-    background-color: #910883;
-    color: white;
-    padding: 8px;
-    border: 2px solid black;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-    width: fit-content;
-    opacity: 1;
-    transform: translateY(50px);
-    transition: transform 1s ease-out, opacity 1s ease-out;
-    z-index: 9000;
- }
+@media (min-width: 425px) {
+  #comments-container {
+    width: 90%;
+    margin-left: -5px;
+    padding: 0 1rem;
+  }
+
+  #video-twitch {
+    margin-bottom: 50px;
+  }
+
+  #coments-title {
+    margin-top: 50px;
+  }
 }
 
    /*768 media screen*/
@@ -339,31 +343,12 @@
       margin-top: 10px;
       margin-left: 10px;
       width: 90%;
-      height: 150px;
       margin-bottom: 50px;
     }
 
     #video-twitch {
       width: 100%;
-      height: 130%;;
     }
-
-    #comment-message {
-    margin-top: 30px;
-    background-color: #910883;
-    color: white;
-    padding: 8px;
-    border: 2px solid black;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-    width: fit-content;
-    opacity: 1;
-    transform: translateY(300px);
-    transition: transform 1s ease-out, opacity 1s ease-out;
-    z-index: 9000;
-   }
 
 
     /*comment section*/
@@ -385,6 +370,9 @@
 #comments-container {
     margin-bottom: 100px;
     margin-top: 350px;
+    max-width: 1000px;
+    margin: 0 10px;
+    padding: 0 1rem;
   }
 
 #video-twitch {
@@ -404,23 +392,23 @@
   }
 
   #comments-container {
-    padding-left: 8%;
+    max-width: 1000px;
+    margin: 0 7px;
+    padding: 0 1rem;
+  }
+}
+
+     /*1440 media screen*/
+@media (min-width: 1440px) {
+
+    #comments-container {
+    max-width: 100%;
+    margin: 0 30px;
+    padding: 0 1rem;
   }
 
-  #comment-message {
-    margin-top: 30px;
-    background-color: #910883;
-    color: white;
-    padding: 8px;
-    border: 2px solid black;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-    width: fit-content;
-    opacity: 1;
-    transform: translateY(350px);
-    transition: transform 1s ease-out, opacity 1s ease-out;
-    z-index: 9000;
-   }
+     #trailer-container {
+    max-width: 1200px;
+    margin: 24px auto 40px;
+  }
 }

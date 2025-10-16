@@ -84,43 +84,53 @@ h2 {
 
 /*navigation*/
 
+#nav-section {
+  width: 100%;
+}
 
 #nav-list {
   list-style: none;
-  display: flex;
-  justify-content: center;
+  margin: 0;
+  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: center;
 }
 
 #nav-list li {
-  padding-right: 5px;
+  display: block;
 }
 
 .nav-btn {
-  display: inline-block;
-  padding: 4px;
-  margin-top: 2px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.3rem 0.1rem;
+  line-height: 1.2;
+  font: inherit;
   background-color: #910883;
-  border: solid black 3px;
+  border: 3px solid black;
   border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.logout-form {
-  position: absolute;
-  top: 13%;
-  left: 6%;
-  padding: 4px;
-}
-
-#login-btn {
-  position: absolute;
-  padding-right: 5px;
-  left: 50%;
-}
 
 .nav-btn:hover {
   background-color: white;
   color: black;
 }
+
+.logout-form {
+  margin: 0;
+}
+
+
 
 #gallery-link {
   text-decoration: none;
@@ -162,27 +172,10 @@ footer img {
 
 /*MEDIA QUERRIES*/
 
-/*320*/
-@media screen and (max-width: 320px) {
-
-  #nav-list {
-  list-style: none;
-  display: flex;
-  margin-left: -30px;
- }
-}
-
 /*375 media screen*/
 @media screen and (min-width: 375px) {
   #title {
     margin-left: -5px;
-  }
-
-  .logout-form {
-    position: absolute;
-    top: 8%;
-    left: 14%;
-    padding: 4px;
   }
 
   #logo-link {
@@ -197,29 +190,37 @@ footer img {
         width: 60px;
         height: 60px;
     }
+
+    #nav-list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+    }
+
+    #nav-list li {
+     flex: 0 0 auto;
+    }
+
     #title {
         font-size: 1.8rem;
         margin-top: 15px;
         margin-left: 70px;
     }
 
+    .nav-btn {
+    width: auto;
+    padding: 0.6rem 1rem;
+  }
+
     #footer {
       width: 100%;
       margin-left: 0%;
-    }
-
-    .logout-form {
-      position: absolute;
-      left: 33%;
-      padding: 4px;
     }
   }
 
      /*768 media screen*/
 @media screen and (min-width: 1024px) {
-    .logout-form {
-      position: absolute;
-      left: 38%;
-      padding: 4px;
-    }
+
 }
