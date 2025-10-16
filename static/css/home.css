@@ -92,24 +92,26 @@
 /*trailer section*/
 
 #trailer-container {
-  margin-top: 10px;
-  margin-left: 10px;
-  width: 90%;
-  height: 150px;
-  margin-bottom: 50px;
+  margin: 16px auto 32px;
+  max-width: 1000px;
+  padding: 0 1rem;
 }
 
 #video-twitch {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 2px solid black;
+  object-fit: cover; 
 }
 
 
 /* comments section styled like a chat box */
 #comments-container {
-  width: 90vw;
-  max-width: 800px;
-  padding-left: 10px;
+  width: 90%;
+  margin: 24px -5px 0px;
+  padding: 0 1rem;
 }
 
 #coments-title {
@@ -273,13 +275,11 @@
   margin-top: 10px;
   margin-left: 10px;
   width: 90%;
-  height: 150px;
   margin-bottom: 50px;
 }
 
 #video-twitch {
   width: 100%;
-  height: 130%;
 }
 
 #comment-btn {
@@ -299,9 +299,26 @@
 }
 
    #comments-container {
-    padding-top: 50px;
-    margin-bottom: 170px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
    }
+}
+
+@media (min-width: 425px) {
+  #comments-container {
+    width: 90%;
+    margin-left: -5px;
+    padding: 0 1rem;
+  }
+
+  #video-twitch {
+    margin-bottom: 50px;
+  }
+
+  #coments-title {
+    margin-top: 50px;
+  }
 }
 
    /*768 media screen*/
@@ -326,13 +343,11 @@
       margin-top: 10px;
       margin-left: 10px;
       width: 90%;
-      height: 150px;
       margin-bottom: 50px;
     }
 
     #video-twitch {
       width: 100%;
-      height: 130%;;
     }
 
 
@@ -355,6 +370,9 @@
 #comments-container {
     margin-bottom: 100px;
     margin-top: 350px;
+    max-width: 1000px;
+    margin: 0 10px;
+    padding: 0 1rem;
   }
 
 #video-twitch {
@@ -374,13 +392,23 @@
   }
 
   #comments-container {
-    padding-left: 8%;
+    max-width: 1000px;
+    margin: 0 7px;
+    padding: 0 1rem;
   }
 }
 
+     /*1440 media screen*/
 @media (min-width: 1440px) {
 
-  #comments-container {
-    margin-left: 10%;
+    #comments-container {
+    max-width: 100%;
+    margin: 0 30px;
+    padding: 0 1rem;
+  }
+
+     #trailer-container {
+    max-width: 1200px;
+    margin: 24px auto 40px;
   }
 }
