@@ -1,12 +1,9 @@
-/* global document, FormData, fetch, window, confirm, console */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Delete button functionality (unchanged)
+
   const deleteBtn = document.getElementById('delete-last-btn');
   if (deleteBtn) {
     deleteBtn.addEventListener('click', function handleDeleteClick() {
       const commentId = this.getAttribute('data-comment-id');
-      // eslint-disable-next-line no-restricted-globals, no-alert
       if (confirm('Are you sure you want to delete this comment?')) {
         const formData = new FormData();
         const csrfTokenEl = document.querySelector('[name=csrfmiddlewaretoken]');
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           })
           .catch((error) => {
-            // eslint-disable-next-line no-console
             console.error('Delete error:', error);
           });
       }
@@ -39,13 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const editBtn = document.getElementById('edit-last-btn');
   if (editBtn) {
     editBtn.addEventListener('click', function handleEditClick() {
-      const commentId = this.getAttribute('data-comment-id');
-      const textInput = document.getElementById('id_text');
+    const commentId = this.getAttribute('data-comment-id');
+    const originalText = this.getAttribute('data-comment-text') || '';
 
-      if (!textInput) return;
+    const textInput =
+      document.getElementById('id_text') ||
+      document.querySelector('#comment-form textarea[name="text"], #comment-form input[name="text"]');
+    if (!textInput) return;
 
-      textInput.value = '';
+      textInput.value = originalText;
       textInput.focus();
+      try { textInput.selectionStart = textInput.selectionEnd = textInput.value.length; } catch (e) {}
 
       let editInput = document.getElementById('edit_comment_id');
       if (!editInput) {

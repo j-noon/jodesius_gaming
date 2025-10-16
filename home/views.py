@@ -6,18 +6,19 @@ from django.views.decorators.http import require_POST
 from .models import Comment
 from .forms import CommentForm
 
+
 @login_required
 def home(request):
     comments = Comment.objects.all().order_by('-created_at')
     last_user_comment = Comment.objects.filter(user=request.user).order_by('-created_at').first()
-    
+
     if request.method == 'POST':
         # Check if we're editing an existing comment
         if 'edit_comment_id' in request.POST:
             comment = get_object_or_404(Comment, id=request.POST['edit_comment_id'])
             if comment.user != request.user:
                 return HttpResponseForbidden("You can only edit your own comments.")
-            
+
             form = CommentForm(request.POST, instance=comment)
             if form.is_valid():
                 form.save()
@@ -41,15 +42,16 @@ def home(request):
         'last_user_comment': last_user_comment
     })
 
+
 @login_required
 @require_POST
 def delete_comment(request):
     comment_id = request.POST.get('comment_id')
     comment = get_object_or_404(Comment, id=comment_id)
-    
+
     if comment.user != request.user:
         return HttpResponseForbidden("You can only delete your own comments.")
-    
+
     comment.delete()
     messages.success(request, "Comment deleted successfully.")
     return redirect('home')

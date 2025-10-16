@@ -62,10 +62,18 @@
       {{ form.text }}
       <div class="button-group">
         <button id="comment-btn" type="submit">Send</button>
-        {% if comments.exists %}
-          <button type="button" id="delete-last-btn" class="action-btn" data-comment-id="{{ last_user_comment.id }}">Delete Last</button>
-                <button type="button" id="edit-last-btn" class="action-btn" data-comment-id="{{ last_user_comment.id }}">Edit Last</button>
-        {% endif %}
+      {% if last_user_comment %}
+        <button type="button" id="delete-last-btn" class="action-btn"
+                data-comment-id="{{ last_user_comment.id }}">
+          Delete Last
+        </button>
+
+        <button type="button" id="edit-last-btn" class="action-btn"
+                data-comment-id="{{ last_user_comment.id }}"
+                data-comment-text="{{ last_user_comment.text|escapejs }}">
+          Edit Last
+        </button>
+      {% endif %}
       </div>
     </form>
   {% else %}
