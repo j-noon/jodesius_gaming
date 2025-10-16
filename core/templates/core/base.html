@@ -30,26 +30,30 @@
          alt="Jodesius Gaming logo">
 </a>
 <nav id="nav-section">
-    <ul id="nav-list">
-        <!-- Modified Gallery Button -->
-       <li><a href="{% if user.is_authenticated %}{% url 'gallery' %}{% else %}#{% endif %}" class="nav-btn protected-link" id="gallery-link">Gallery</a></li>
-        
-
-        <!-- Modified Learning Button -->
-        <li><a href="{% if user.is_authenticated %}{% url 'learning' %}{% else %}#{% endif %}" class="nav-btn protected-link" id="learning-link">Learning</a></li>
-     </ul> 
-    
-
-        {% if user.is_authenticated %}
-            <form action="{% url 'logout' %}" method="post" class="logout-form">
-                {% csrf_token %}
-                <button type="submit" class="nav-btn">Logout</button>
-            </form>
-        {% else %}
-            <a id="login-btn" href="{% url 'login' %}"><li class="nav-btn">Login</li></a>
-            <a href="{% url 'register' %}"><li class="nav-btn" id="register-btn">Register</li></a>
-        {% endif %}
-    
+  <ul id="nav-list">
+    <li>
+      <a href="{% url 'home' %}" class="nav-btn" id="home-link">Home</a>
+    </li>
+    <li>
+      <a href="{% if user.is_authenticated %}{% url 'gallery' %}{% else %}#{% endif %}"
+         class="nav-btn protected-link" id="gallery-link">Gallery</a>
+    </li>
+    <li>
+      <a href="{% if user.is_authenticated %}{% url 'learning' %}{% else %}#{% endif %}"
+         class="nav-btn protected-link" id="learning-link">Learning</a>
+    </li>
+    <li>
+      {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post" class="logout-form">
+          {% csrf_token %}
+          <button type="submit" class="nav-btn">Logout</button>
+        </form>
+      {% else %}
+        <a id="login-btn" href="{% url 'login' %}" class="nav-btn">Login</a>
+        {# If you really need Register here as well, we can make this a 4-col grid at tablet sizes #}
+      {% endif %}
+    </li>
+  </ul>
 </nav>
     </header>
 
